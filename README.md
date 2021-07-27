@@ -9,6 +9,8 @@
 ![vk-bot](vk-bot.gif)|![tg-bot](tg-bot.gif)
 ---------------------|---------------------
 
+[Пример чат-бота telegram](https://t.me/Sheru_support_bot).
+
 ## Как установить
 
 ### Скачать 
