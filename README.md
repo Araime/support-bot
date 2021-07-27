@@ -130,7 +130,7 @@ python vk_bot.py
 
 7. В тот же Config Vars необходимо прописать ваш ключ google-credentialsa.json.
    Сделать это нужно следующим образом:
-   1. Создайте ключ Config Vars GOOGLE_CREDENTIALSи вставьте содержимое JSON-файла 
+   1. Создайте ключ Config Vars GOOGLE_CREDENTIALS и вставьте содержимое JSON-файла 
       учетных данных учетной записи службы как есть.
    2. Создайте ключ в Config Vars GOOGLE_APPLICATION_CREDENTIALS и установите 
       значение как google-credentials.json.
