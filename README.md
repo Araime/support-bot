@@ -132,7 +132,7 @@ python vk_bot.py
    Сделать это нужно следующим образом:
    1. Создайте ключ Config Vars GOOGLE_CREDENTIALSи вставьте содержимое JSON-файла 
       учетных данных учетной записи службы как есть.
-   2. Создайте ключ в Config Vars GOOGLE_APPLICATION_CREDENTIALSи установите 
+   2. Создайте ключ в Config Vars GOOGLE_APPLICATION_CREDENTIALS и установите 
       значение как google-credentials.json.
       
 <a href="https://ibb.co/4Nd361J"><img src="https://i.ibb.co/C02DkPW/3gxMn.png" alt="3gxMn" border="0"></a>
