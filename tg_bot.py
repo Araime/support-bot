@@ -19,12 +19,16 @@ def echo(update, context: CallbackContext):
     """Responding to user messages using dialogflow."""
     project_id = os.getenv('PROJECT_ID')
 
-    answer = detect_intent_texts(
-        project_id,
-        update.message.chat_id,
-        update.message.text,
-        'ru-RU')
-    update.message.reply_text(answer['answer_text'])
+    # noinspection PyBroadException
+    try:
+        answer = detect_intent_texts(
+            project_id,
+            update.message.chat_id,
+            update.message.text,
+            'ru-RU')
+        update.message.reply_text(answer['answer_text'])
+    except Exception:
+        logger.exception('tg_bot поймал ошибку при сообщения')
 
 
 def main():
