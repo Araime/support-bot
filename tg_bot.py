@@ -19,9 +19,9 @@ def start(update, context: CallbackContext):
     update.message.reply_text('Добрый день! Бот поддержки рад приветствовать вас!')
 
 
-def error_callback(update, error):
+def error_callback(update, context: CallbackContext):
     """Handling all errors."""
-    logger.exception('Бот "%s" поймал ошибку "%s"', update, error)
+    logger.exception('Бот "%s" поймал ошибку "%s"', update, context.error)
 
 
 def reply_to_message(update, context: CallbackContext):
