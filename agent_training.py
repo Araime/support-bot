@@ -7,7 +7,6 @@ from google.cloud import dialogflow_v2 as dialogflow
 
 from logs_handler import configure_handler
 
-os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 logger = logging.getLogger('agent_training')
 
 

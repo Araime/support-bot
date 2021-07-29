@@ -1,8 +1,4 @@
-import os
-
 from google.cloud import dialogflow_v2 as dialogflow
-
-os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 
 
 def detect_intent_texts(project_id, session_id, text, language_code):
