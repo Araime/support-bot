@@ -12,7 +12,7 @@ from logs_handler import configure_handler
 logger = logging.getLogger('vk_bot')
 
 
-def echo(event, vk_api):
+def reply_to_message(event, vk_api):
     """Responding to user messages using dialogflow."""
     project_id = os.getenv('PROJECT_ID')
 
@@ -42,7 +42,7 @@ def main():
         if event.type == VkEventType.MESSAGE_NEW and event.to_me:
             # noinspection PyBroadException
             try:
-                echo(event, vk_api)
+                reply_to_message(event, vk_api)
             except Exception:
                 logger.exception('vk_bot поймал ошибку: ')
 

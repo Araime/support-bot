@@ -15,7 +15,7 @@ def start(update, context: CallbackContext):
     update.message.reply_text('Добрый день! Бот поддержки рад приветствовать вас!')
 
 
-def echo(update, context: CallbackContext):
+def reply_to_message(update, context: CallbackContext):
     """Responding to user messages using dialogflow."""
     project_id = os.getenv('PROJECT_ID')
 
@@ -42,7 +42,7 @@ def main():
         updater = Updater(os.getenv('TG_DIALOG_BOT'))
         dispatcher = updater.dispatcher
         dispatcher.add_handler(CommandHandler('start', start))
-        dispatcher.add_handler(MessageHandler(Filters.text, echo))
+        dispatcher.add_handler(MessageHandler(Filters.text, reply_to_message))
         updater.start_polling()
         updater.idle()
     except Exception:
