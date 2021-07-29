@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 from google.cloud import dialogflow_v2 as dialogflow
 
-from logs_handler import create_handler
+from logs_handler import configure_handler
 
 os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 logger = logging.getLogger('agent_training')
@@ -50,7 +50,7 @@ def main():
     load_dotenv()
     project_id = os.getenv('PROJECT_ID')
 
-    create_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
+    configure_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
     logger.info('agent_training запущен!')
 
     with open('questions.json', 'r', encoding='utf-8') as file:

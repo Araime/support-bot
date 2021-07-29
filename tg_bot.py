@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
 from dialogs_handler import detect_intent_texts
-from logs_handler import create_handler
+from logs_handler import configure_handler
 
 logger = logging.getLogger('tg_bot')
 
@@ -34,7 +34,7 @@ def echo(update, context: CallbackContext):
 def main():
     load_dotenv()
 
-    create_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
+    configure_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
 
     # noinspection PyBroadException
     try:

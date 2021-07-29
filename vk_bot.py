@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from vk_api.longpoll import VkLongPoll, VkEventType
 
 from dialogs_handler import detect_intent_texts
-from logs_handler import create_handler
+from logs_handler import configure_handler
 
 logger = logging.getLogger('vk_bot')
 
@@ -36,7 +36,7 @@ def echo(event, vk_api):
 def main():
     load_dotenv()
 
-    create_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
+    configure_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
 
     # noinspection PyBroadException
     try:

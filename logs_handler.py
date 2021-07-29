@@ -17,7 +17,7 @@ class TelegramBotHandler(logging.Handler):
         service_bot.send_message(chat_id=self.chat_id, text=log_entry)
 
 
-def create_handler(logger, service_bot_token, chat_id):
+def configure_handler(logger, service_bot_token, chat_id):
     """Adding a handler for the logger."""
     logger.setLevel(logging.INFO)
     handler = TelegramBotHandler(service_bot_token, chat_id)
