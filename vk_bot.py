@@ -16,21 +16,17 @@ def echo(event, vk_api):
     """Responding to user messages using dialogflow."""
     project_id = os.getenv('PROJECT_ID')
 
-    # noinspection PyBroadException
-    try:
-        answer = detect_intent_texts(
-            project_id,
-            event.user_id,
-            event.text,
-            'ru-RU')
+    answer = detect_intent_texts(
+        project_id,
+        event.user_id,
+        event.text,
+        'ru-RU')
 
-        if not answer['is_fallback']:
-            vk_api.messages.send(
-                user_id=event.user_id,
-                message=answer['answer_text'],
-                random_id=random.randint(0, 100000))
-    except Exception:
-        logger.exception('vk_bot поймал ошибку при отправке сообщения')
+    if not answer['is_fallback']:
+        vk_api.messages.send(
+            user_id=event.user_id,
+            message=answer['answer_text'],
+            random_id=random.randint(0, 100000))
 
 
 def main():
