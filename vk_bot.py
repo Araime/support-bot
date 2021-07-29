@@ -6,7 +6,7 @@ import vk_api as vk
 from dotenv import load_dotenv
 from vk_api.longpoll import VkLongPoll, VkEventType
 
-from dialogs_handler import detect_intent_texts
+from dialog import detect_intent_texts
 from logs_handler import configure_handler
 
 logger = logging.getLogger('vk_bot')

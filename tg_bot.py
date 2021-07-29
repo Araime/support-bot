@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-from dialogs_handler import detect_intent_texts
+from dialog import detect_intent_texts
 from logs_handler import configure_handler
 
 logger = logging.getLogger('tg_bot')
