@@ -34,17 +34,17 @@ def main():
 
     configure_handler(logger, os.getenv('TG_SERVICE_BOT'), os.getenv('TG_CHAT_ID'))
 
-    # noinspection PyBroadException
-    try:
-        logger.info('vk_bot запущен!')
-        vk_session = vk.VkApi(token=os.getenv('VK_GROUP_TOKEN'))
-        vk_api = vk_session.get_api()
-        longpoll = VkLongPoll(vk_session)
-        for event in longpoll.listen():
-            if event.type == VkEventType.MESSAGE_NEW and event.to_me:
+    logger.info('vk_bot запущен!')
+    vk_session = vk.VkApi(token=os.getenv('VK_GROUP_TOKEN'))
+    vk_api = vk_session.get_api()
+    longpoll = VkLongPoll(vk_session)
+    for event in longpoll.listen():
+        if event.type == VkEventType.MESSAGE_NEW and event.to_me:
+            # noinspection PyBroadException
+            try:
                 echo(event, vk_api)
-    except Exception:
-        logger.exception('vk_bot поймал ошибку: ')
+            except Exception:
+                logger.exception('vk_bot поймал ошибку: ')
 
 
 if __name__ == '__main__':
