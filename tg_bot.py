@@ -21,7 +21,7 @@ def start(update, context: CallbackContext):
 
 def error_callback(update, error):
     """Handling all errors."""
-    logger.exception('Update "%s" caused error "%s"', update, error)
+    logger.exception('Бот "%s" поймал ошибку "%s"', update, error)
 
 
 def reply_to_message(update, context: CallbackContext):
