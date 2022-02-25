@@ -6,8 +6,8 @@
 входит дополнительный telegram-бот для получения сообщений об ошибках. В проект входит
 отдельный скрипт для загрузки новых вопросов и ответов.
 
-![vk-bot](vk-bot.gif)|![tg-bot](tg-bot.gif)
----------------------|---------------------
+![vk-bot](vk-bot.gif)|![tg-bot](tg-bot.gif)|
+---------------------|---------------------|
 
 [Пример чат-бота telegram](https://t.me/Sheru_support_bot).
 
@@ -130,7 +130,7 @@ python vk_bot.py
 
 <a href="https://ibb.co/5x70h7H"><img src="https://i.ibb.co/FqPr4PT/8.png" alt="8" border="0"></a>  
 
-7. В тот же Config Vars необходимо прописать ваш ключ google-credentialsa.json.
+7. В тот же Config Vars необходимо прописать ваш ключ google-credentials.json.
    Сделать это нужно следующим образом:
    1. Создайте ключ Config Vars GOOGLE_CREDENTIALS и вставьте содержимое JSON-файла 
       учетных данных учетной записи службы как есть.
